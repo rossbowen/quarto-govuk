@@ -1,5 +1,5 @@
 {
-    "image": "registry.gitlab.com/quarto-forge/docker/polyglot",
+    "image": "mcr.microsoft.com/devcontainers/universal:2-linux",
     "customizations": {
         "vscode": {
             "extensions": [
@@ -10,6 +10,8 @@
         }
     },
     "features": {
-        "ghcr.io/devcontainers/features/git:1": {}
+        "ghcr.io/rocker-org/devcontainer-features/quarto-cli:1": {},
+        "ghcr.io/rocker-org/devcontainer-features/pandoc:1": {},
+        "ghcr.io/rocker-org/devcontainer-features/r-apt:0": {}
     }
 }
