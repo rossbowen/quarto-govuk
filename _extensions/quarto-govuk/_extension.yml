@@ -8,5 +8,6 @@ contributes:
       template: template.html
       filters:
         - filter.lua
+      theme: none
       minimal: true
 

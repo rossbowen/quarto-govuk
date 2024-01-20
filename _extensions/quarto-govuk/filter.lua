@@ -1,3 +1,10 @@
+quarto.doc.add_html_dependency({
+    name = "govuk-frontend",
+    version = "5.0.0",
+    scripts = { "assets/js/govuk-frontend-5.0.0.min.js" },
+    stylesheets = { "assets/css/govuk-frontend-5.0.0.min.css" }
+})
+
 function Header(el)
     if el.level == 1 then
         el.classes = {
@@ -25,6 +32,13 @@ function Header(el)
         }
     end
 
+    return el
+end
+
+function Link(el)
+    el.classes = {
+        'govuk-link'
+    }
     return el
 end
 
