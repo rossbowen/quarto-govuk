@@ -1,3 +1,15 @@
 {
-    "image": "registry.gitlab.com/quarto-forge/docker/polyglot"
+    "image": "registry.gitlab.com/quarto-forge/docker/polyglot",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "quarto.quarto",
+                "sumneko.lua",
+                "george-alisson.html-preview-vscode"
+            ]
+        }
+    },
+    "features": {
+        "ghcr.io/devcontainers/features/git:1": {}
+    }
 }
