@@ -45,10 +45,19 @@ end
 -- Classes for paragraphs aren't exposed so using the workaround from here:
 -- https://stackoverflow.com/questions/72761776/pandoc-lua-how-to-add-class-to-a-para
 
-function Para(para)
+function Para(el)
     return pandoc.Plain(
         { pandoc.RawInline('html', '<p class="govuk-body">') } ..
-        para.content ..
+        el.content ..
         { pandoc.RawInline('html', '</p>') }
     )
 end
+
+-- Not working yet :(
+-- function BulletList(items)
+--     local buffer = {}
+--     for _, item in pairs(items) do
+--         table.insert(buffer, "<li>" .. item .. "</li>")
+--     end
+--     return pandoc.RawInline("html", '<ul class="govuk-list govuk-list--bullet">\n' .. table.concat(buffer, "\n") .. "\n</ul>")
+-- end
