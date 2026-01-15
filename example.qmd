@@ -1,0 +1,403 @@
+---
+title: This is an example document using the `quarto-govuk` format
+subtitle: Demonstrating the [GOV.UK Design System](https://design-system.service.gov.uk/) within [Quarto](https://quarto.org/)
+format:
+  quarto-govuk-html:
+    toc: true
+author: Ross Bowen
+date: 2025-11-03
+date-modified: last-modified
+bibliography: references.bib
+nocite: '@*'
+---
+
+## Paragraphs
+
+The default [paragraph](https://design-system.service.gov.uk/styles/paragraphs/) font size is 19px.
+
+### Bold
+
+This is **bold** text and this is ***bold italics*** text.
+
+### Italics
+
+This is *italicised* text.
+
+### Strikeout
+
+This is ~~struck-through~~ text.
+
+### Inline code
+
+This is an example of `inline code` within a paragraph.
+
+### Inline mathematics
+
+This is an example of inline mathematics: $a^2 + b^2 = c^2$ within a paragraph.
+
+---
+
+## Headings
+
+Use [heading](https://design-system.service.gov.uk/styles/headings/) tags, such as `##`, `###`, and so on, for headings within the document body. If a title is provided, it’s displayed as a top-level heading (`#`), so the main content should begin at level 2 (`##`) or below.
+
+HTML supports only `h1` to `h6`. Any level beyond that is displayed in body text.
+
+Write all headings in [sentence case](https://www.gov.uk/guidance/style-guide/a-to-z#capitalisation).
+
+### Example
+
+```md
+### This is a level 3 header
+
+#### This is a level 4 header
+
+##### This is a level 5 header
+
+###### This is a level 6 header
+
+####### This is a level 7 heading
+```
+
+### This is a level 3 header
+
+#### This is a level 4 header
+
+##### This is a level 5 header
+
+###### This is a level 6 header
+
+####### This is a level 7 heading
+
+---
+
+## Blockquotes
+
+Use the [inset text](https://design-system.service.gov.uk/components/inset-text/) component to differentiate a block of text from the content that surrounds it, for example:
+
+- quotes
+- examples
+- additional information about the page
+
+### Example
+
+```md
+> Block quotes can span multiple paragraphs.
+>
+> Block quotes can be nested.
+>
+> > In Bayesian statistics, the posterior distribution
+> > $p(\theta \mid y) = \frac{p(y \mid \theta), p(\theta)}{p(y)}$
+> > expresses updated belief about parameters $\theta$ after observing data $y$.
+```
+
+> Block quotes can span multiple paragraphs.
+>
+> Block quotes can be nested.
+>
+> > In Bayesian statistics, the posterior distribution
+> > $p(\theta \mid y) = \frac{p(y \mid \theta), p(\theta)}{p(y)}$
+> > expresses updated belief about parameters $\theta$ after observing data $y$.
+
+---
+
+
+## Lists
+
+Use [lists](https://design-system.service.gov.uk/styles/lists/) to make blocks of text easier to read, and to break information into manageable chunks.
+
+### Bulleted lists
+
+Introduce bulleted lists with a lead-in line ending in a colon. Start each item with a lowercase letter, and do not use a full stop at the end.
+
+#### Simple bulleted list
+
+```md
+You can buy:
+
+- apples
+- oranges
+- pears
+- $\pi$
+```
+
+You can buy:
+
+- apples
+- oranges
+- pears
+- $\pi$
+
+#### Nested bulleted list
+
+```md
+Bullet lists can also be nested to show hierarchy:
+
+- first bullet item
+- second bullet item
+  - nested bullet item
+  - another nested item
+  - another nested $\pi$
+- third bullet item
+```
+
+Bullet lists can also be nested to show hierarchy:
+
+- first bullet item
+- second bullet item
+  - alpha $\alpha$
+  - beta $\beta$
+  - gamma $\gamma$
+- third bullet item
+
+#### Spaced bulleted list
+
+If a list is hard to read because the items run across multiple lines you can add extra spacing.
+
+```md
+Examples of Bayesian–Monte Carlo methods include:
+
+- Markov chain Monte Carlo, which constructs a sequence of dependent samples forming a chain whose stationary distribution is $p(\theta \mid y)$
+
+- importance sampling, which estimates expectations by drawing from a simpler proposal and assigning weighted samples $w_i = \frac{p(\theta_i \mid y)}{q(\theta_i)}$
+
+- Hamiltonian Monte Carlo, which simulates trajectories through parameter space governed by the potential energy $U(\theta) = -\log p(\theta \mid y)$ to explore the posterior efficiently
+```
+
+Examples of Bayesian–Monte Carlo methods include:
+
+- Markov chain Monte Carlo, which constructs a sequence of dependent samples forming a chain whose stationary distribution is $p(\theta \mid y)$
+
+- importance sampling, which estimates expectations by drawing from a simpler proposal and assigning weighted samples $w_i = \frac{p(\theta_i \mid y)}{q(\theta_i)}$
+
+- Hamiltonian Monte Carlo, which simulates trajectories through parameter space governed by the potential energy $U(\theta) = -\log p(\theta \mid y)$ to explore the posterior efficiently
+
+### Numbered lists
+
+Use numbered lists instead of bulleted lists when the order of the items is relevant.
+
+You do not need to use a lead-in line for numbered lists. Items in a numbered list should end in a full stop because each should be a complete sentence.
+
+Numbered lists can also be nested and spaced.
+
+```md
+1. Delivery address.
+1. Payment.
+1. Confirmation.
+1. $\pi$.
+```
+
+1. Delivery address.
+1. Payment.
+1. Confirmation.
+1. $\pi$.
+
+### Definition list
+
+Use a definition list ([summary list](https://design-system.service.gov.uk/components/summary-list/)) to summarise information, for example, a user’s responses at the end of a form.
+
+Use a summary list to show information as a list of key facts.
+
+#### Example
+
+```md
+Name
+: Sarah $\Phi$ Philips
+
+Date of birth
+: 5 January 1978
+
+Address
+: 72 Guild Street  
+  London  
+  SE23 6FH
+
+Contact details
+: 07700 900457  
+  sarah.phillips@example.com
+```
+
+Name
+: Sarah $\Phi$ Philips
+
+Date of birth
+: 5 January 1978
+
+Address
+: 72 Guild Street  
+  London  
+  SE23 6FH
+
+Contact details
+: 07700 900457  
+  sarah.phillips@example.com
+
+## Code block
+
+This pattern is adapted from the GOV.UK Design System website and is not part of [`govuk-frontend`](https://github.com/alphagov/govuk-frontend). Use code blocks to display sample code, commands, or other preformatted text.
+
+```r
+library(dplyr)
+
+tibble(x = c(2, 4, 6, 8, 10)) |> 
+  summarise(mean = mean(x), sd = sd(x)) |> 
+  print()
+```
+
+---
+
+## Horizontal rule
+
+Use a horizontal rule ([section break](https://design-system.service.gov.uk/styles/section-break/)) element to create a thematic break between sections of content.
+
+---
+
+## Line block
+
+
+Line blocks are used to present lines of text, such as poetry or [addresses](https://components.publishing.service.gov.uk/component-guide/govspeak/address), with preserved line breaks.
+
+### Example
+
+```md
+| First line of address
+| Second line of address
+| 75 This street
+| United Kingdom
+| Phone: 07123456789
+| $\pi$
+```
+
+| First line of address
+| Second line of address
+| 75 This street
+| United Kingdom
+| Phone: 07123456789
+| $\pi$
+
+---
+
+## Images
+
+Images can be included without captions.
+
+### Example
+
+```md
+![](https://picsum.photos/400.jpg)
+```
+
+![](https://picsum.photos/400.jpg)
+
+---
+
+## Figures
+
+
+[Figures](https://components.publishing.service.gov.uk/component-guide/figure) are images with captions.
+
+### Example
+
+```md
+![An example figure $\pi$](https://picsum.photos/400.jpg "This is hover text for the figure")
+```
+
+![An example figure $\pi$](https://picsum.photos/400.jpg "This is hover text for the figure")
+
+---
+
+## Tables
+
+Use the [table](https://design-system.service.gov.uk/components/table/) component to make information easier to compare and scan for users.
+
+### Example
+
+```md
+| Name  | Type    | Value |
+| ----- | ------- | ----: |
+| Alice | String  |    12 |
+| Bob   | Integer |    34 |
+| Eve   | Float   | $\pi$ |
+
+Table: Example table with a caption and different column types $\pi$.
+```
+
+| Name  | Type    | Value |
+| ----- | ------- | ----: |
+| Alice | String  |    12 |
+| Bob   | Integer |    34 |
+| Eve   | Float   | $\pi$ |
+
+Table: Example table with a caption and different column types $\pi$.
+
+## Mathematics $\pi$
+
+Mathematical notation can be included using inline or display maths. This is useful for technical content, equations, and scientific writing.
+
+### Inline maths
+
+```md
+The solution to $ax^2 + bx + c = 0$ is $x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$.
+```
+
+The solution to $ax^2 + bx + c = 0$ is $x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$.
+
+### Display maths
+
+```md
+$$
+\int_{-\infty}^{\infty} e^{-x^2} \, dx = \sqrt{\pi}.
+$$
+```
+
+$$
+\int_{-\infty}^{\infty} e^{-x^2} \, dx = \sqrt{\pi}.
+$$
+
+
+---
+
+## Footnotes
+
+Footnotes are useful for providing additional information, references, or clarifications without cluttering the main text.
+
+### Example
+
+```md
+Footnote reference [^note1].
+
+[^note1]: This is a note containing **bold**, a `code` inline, and a mathematical expression: $e^{i\pi} + 1 = 0$.
+```
+
+Footnote reference[^note1].
+
+[^note1]: This is a note containing **bold**, a `code` inline, and a mathematical expression: $e^{i\pi} + 1 = 0$.
+
+---
+
+## Citations
+
+Citations are used to reference sources in your document.
+
+### Example
+
+```md
+Data wrangling, visualisation, and modelling can be efficiently performed in R using the tools and principles outlined in @r4ds2023.
+```
+
+Data wrangling, visualisation, and modelling can be efficiently performed in R using the tools and principles outlined in @r4ds2023.
+
+---
+
+
+## Links
+
+[Links](https://design-system.service.gov.uk/styles/links/) are blue and underlined by default. If your link is at the end of a sentence or paragraph, make sure that the linked text does not include the full stop.
+
+### Example
+
+```md
+[Example link $\pi$](https://example.com).
+```
+
+[Example link $\pi$](https://example.com).

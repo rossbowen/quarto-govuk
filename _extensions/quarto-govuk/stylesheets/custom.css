@@ -1,0 +1,469 @@
+/* ==========================================================================
+    Custom styles for quarto-govuk extension
+   ========================================================================== */
+
+/* ==========================================================================
+    Masthead
+   ========================================================================== */
+
+.app-c-masthead {
+  /* background-color: #1d70b8; */
+  background-color: #d2e2f1;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+@media (min-width: 40.0625em) {
+  .app-c-masthead {
+    padding-top: 30px;
+    padding-bottom: 20px;
+  }
+}
+
+.app-masthead__description {
+  margin-top: 0;
+  max-width: 30em;
+  color: #0b0c0c;
+  margin-bottom: 15px;
+  font-family: "GDS Transport", arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  font-size: 1.3125rem;
+  line-height: 1.1904761905;
+}
+
+@media print {
+  .app-masthead__description {
+    color: #000;
+  }
+}
+
+@media (min-width: 40.0625em) {
+  .app-masthead__description {
+    margin-bottom: 40px;
+  }
+}
+
+@media print {
+  .app-masthead__description {
+    font-family: sans-serif;
+  }
+}
+
+@media (min-width: 40.0625em) {
+  .app-masthead__description {
+    font-size: 1.5rem;
+    line-height: 1.25;
+  }
+}
+
+@media print {
+  .app-masthead__description {
+    font-size: 18pt;
+    line-height: 1.15;
+  }
+}
+
+.app-masthead__description--inverse {
+  color: #fff;
+}
+
+@media print {
+  .app-masthead__description {
+    color: #000;
+  }
+}
+
+/* ==========================================================================
+    Line block
+   ========================================================================== */
+
+.app-c-line-block {
+  border-left: 1px solid #b1b4b6; /* govuk-colour("mid-grey") */
+  padding-left: 15px; /* govuk-spacing(3); */
+  margin: 0 0 30px 0; /* govuk-spacing(6) */
+  /* Override the browser default of italics for <address> */
+  font-style: normal;
+}
+
+/* ==========================================================================
+    Code block
+   ========================================================================== */
+
+/* https://github.com/alphagov/govuk-design-system/blob/8c4890a1b2ebb26fd235147710b111c8317ecc15/src/stylesheets/main.scss */
+
+code {
+  font-family: ui-monospace, menlo, "Cascadia Mono", "Segoe UI Mono", consolas,
+    "Liberation Mono", monospace;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+}
+
+code:not(pre code) {
+  padding: 1px 3px;
+  color: #d13118;
+  background-color: #f3f2f1;
+  line-height: 1.25;
+}
+
+pre code {
+  display: block;
+  /* max-width: 38em; */
+  margin: 0;
+  padding: 20px;
+  overflow-x: auto;
+  border: 3px solid rgba(0, 0, 0, 0);
+  outline: 1px solid #b1b4b6;
+  background-color: #f8f8f8;
+  font-size: 1.1875rem;
+  line-height: 1.3157894737;
+  margin-bottom: 15px;
+  padding-top: 45px;
+}
+
+.app-copy-button {
+  font-family: "GDS Transport", arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.25;
+  position: absolute;
+  z-index: 1;
+  top: 10px;
+  right: 10px;
+  min-width: 110px;
+  padding: 3px 10px;
+  border: 1px solid #00823b;
+  color: #00823b;
+  background-color: #fff;
+  box-shadow: 0 2px 0 0 #00703c;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+.app-copy-button:focus:not(:hover) {
+  color: #0b0c0c; /* $govuk-focus-text-colour */
+  background-color: #ffdd00; /* $govuk-focus-colour */
+  box-shadow: 0 2px 0 0 #0b0c0c;
+}
+
+.app-copy-button:active,
+.app-copy-button:focus {
+  padding: 2px 10px; /* Adjust for thicker border */
+  border: 2px solid #ffdd00; /* $govuk-focus-colour */
+  outline: 2px solid transparent;
+  box-shadow: none;
+}
+
+.app-copy-button:active {
+  margin-top: 2px;
+  box-shadow: none;
+}
+
+.app-example__code {
+  position: relative;
+}
+
+/* ==========================================================================
+    Figure
+   ========================================================================== */
+
+.app-c-figure {
+  border-top: 1px solid #b1b4b6;
+  padding-top: 15px;
+  margin: 0;
+  margin-bottom: 50px;
+}
+
+.app-c-figure::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+@media (max-width: 40.0525em) {
+  .app-c-figure {
+    margin-bottom: 30px;
+  }
+}
+
+.app-c-figure__image {
+  display: block;
+  width: 100%;
+}
+
+@media (min-width: 40.0625em) {
+  .app-c-figure__image {
+    float: inline-start;
+    width: 50%;
+  }
+}
+
+.app-c-figure__figcaption {
+  font-family: "GDS Transport", arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.25;
+}
+
+@media print {
+  .app-c-figure__figcaption {
+    font-family: sans-serif;
+  }
+}
+
+@media print {
+  .app-c-figure__figcaption {
+    font-size: 14pt;
+    line-height: 1.2;
+  }
+}
+
+@media (min-width: 40.0625em) {
+  .app-c-figure__figcaption {
+    display: block;
+    vertical-align: top;
+    box-sizing: border-box;
+    float: inline-end;
+    padding-inline-start: 15px;
+    width: 50%;
+  }
+}
+
+@media (max-width: 40.0525em) {
+  .app-c-figure__figcaption {
+    margin-top: 10px;
+  }
+}
+
+.app-c-figure__figcaption-text {
+  margin: 0;
+  margin-bottom: 10px;
+  font-family: "GDS Transport", arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.25;
+}
+
+@media print {
+  .app-c-figure__figcaption-text {
+    font-family: sans-serif;
+  }
+}
+
+@media print {
+  .app-c-figure__figcaption-text {
+    font-size: 14pt;
+    line-height: 1.2;
+  }
+}
+
+/* ==========================================================================
+    Lists
+   ========================================================================== */
+
+.govuk-list--bullet li,
+.govuk-list--number li {
+  margin-bottom: 0;
+}
+
+@media (min-width: 40.0625em) {
+  .govuk-list--bullet li,
+  .govuk-list--number li {
+    margin-bottom: 5px;
+  }
+}
+
+.govuk-list--spaced li {
+  margin-bottom: 10px;
+}
+
+@media (min-width: 40.0625em) {
+  .govuk-list--spaced li {
+    margin-bottom: 15px;
+  }
+}
+
+.govuk-list--bullet li > ul,
+.govuk-list--number li > ol {
+  margin-top: 0;
+}
+
+@media (min-width: 40.0625em) {
+  .govuk-list--bullet li > ul,
+  .govuk-list--number li > ol {
+    margin-top: 5px;
+  }
+}
+
+.govuk-list--spaced li > ul,
+.govuk-list--spaced li > ol {
+  margin-top: 10px;
+}
+
+@media (min-width: 40.0625em) {
+  .govuk-list--spaced li > ul,
+  .govuk-list--spaced li > ol {
+    margin-top: 15px;
+  }
+}
+
+/* ==========================================================================
+    Metadata
+   ========================================================================== */
+
+.app-c-metadata {
+  font-family: GDS Transport, arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.25;
+  color: #0b0c0c;
+  padding: 15px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  clear: both;
+  border-left: 10px solid #1d70b8;
+  background: #f4f8fb;
+}
+
+@media print {
+  .app-c-metadata {
+    font-family: sans-serif;
+  }
+}
+
+@media (min-width: 40.0625em) {
+  .app-c-metadata {
+    font-size: 1.1875rem;
+    line-height: 1.3157894737;
+    margin-bottom: 30px;
+    padding: 20px;
+  }
+}
+
+@media print {
+  .app-c-metadata {
+    font-size: 14pt;
+    line-height: 1.15;
+    color: #000;
+  }
+}
+
+.app-c-metadata > :first-child {
+  margin-top: 0;
+}
+
+.app-c-metadata > :last-child,
+.app-c-metadata > :only-child {
+  margin-bottom: 0;
+}
+
+/* Metadata list */
+.app-c-metadata__list {
+  font-family: GDS Transport, arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.25;
+  color: #0b0c0c;
+  margin: 0;
+}
+
+@media print {
+  .app-c-metadata__list {
+    font-family: sans-serif;
+  }
+}
+
+@media (min-width: 40.0625em) {
+  .app-c-metadata__list {
+    font-size: 1.1875rem;
+    line-height: 1.3157894737;
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+  }
+}
+
+@media print {
+  .app-c-metadata__list {
+    font-size: 14pt;
+    line-height: 1.15;
+    color: #000;
+  }
+}
+
+/* Metadata row */
+.app-c-metadata__row {
+  border-bottom: 1px solid #b1b4b6;
+}
+
+@media (max-width: 40.0525em) {
+  .app-c-metadata__row {
+    margin-bottom: 15px;
+  }
+}
+
+@media (min-width: 40.0625em) {
+  .app-c-metadata__row {
+    display: table-row;
+  }
+}
+
+.app-c-metadata__row:last-of-type {
+  border-bottom: none;
+}
+
+/* Metadata key and value */
+.app-c-metadata__key,
+.app-c-metadata__value {
+  margin: 0;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+@media (min-width: 40.0625em) {
+  .app-c-metadata__key,
+  .app-c-metadata__value {
+    display: table-cell;
+    padding-top: 10px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+  }
+}
+
+.app-c-metadata__key {
+  margin-bottom: 5px;
+  font-weight: 700;
+}
+
+@media (min-width: 40.0625em) {
+  .app-c-metadata__key {
+    width: 30%;
+  }
+}
+
+@media (max-width: 40.0525em) {
+  .app-c-metadata__value {
+    margin-bottom: 15px;
+  }
+}
+
+.app-c-metadata__value > p {
+  margin-bottom: 10px;
+}
+
+.app-c-metadata__value > :last-child {
+  margin-bottom: 0;
+}
