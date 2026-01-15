@@ -1,0 +1,51 @@
+/* ==========================================================================
+   Lists Enhancement
+
+   Extends GOV.UK Frontend list components with additional spacing rules
+   ========================================================================== */
+
+.govuk-list--bullet li,
+.govuk-list--number li {
+  margin-bottom: 0;
+}
+
+@media (min-width: 40.0625em) {
+  .govuk-list--bullet li,
+  .govuk-list--number li {
+    margin-bottom: 5px;
+  }
+}
+
+.govuk-list--spaced li {
+  margin-bottom: 10px;
+}
+
+@media (min-width: 40.0625em) {
+  .govuk-list--spaced li {
+    margin-bottom: 15px;
+  }
+}
+
+.govuk-list--bullet li > ul,
+.govuk-list--number li > ol {
+  margin-top: 0;
+}
+
+@media (min-width: 40.0625em) {
+  .govuk-list--bullet li > ul,
+  .govuk-list--number li > ol {
+    margin-top: 5px;
+  }
+}
+
+.govuk-list--spaced li > ul,
+.govuk-list--spaced li > ol {
+  margin-top: 10px;
+}
+
+@media (min-width: 40.0625em) {
+  .govuk-list--spaced li > ul,
+  .govuk-list--spaced li > ol {
+    margin-top: 15px;
+  }
+}

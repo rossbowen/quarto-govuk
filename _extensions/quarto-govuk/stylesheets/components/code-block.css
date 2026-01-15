@@ -1,0 +1,79 @@
+/* ==========================================================================
+   Code Block Component
+
+   Based on: https://github.com/alphagov/govuk-design-system/blob/main/src/stylesheets/main.scss
+   ========================================================================== */
+
+code {
+  font-family: ui-monospace, menlo, "Cascadia Mono", "Segoe UI Mono", consolas,
+    "Liberation Mono", monospace;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+}
+
+code:not(pre code) {
+  padding: 1px 3px;
+  color: #d13118;
+  background-color: #f3f2f1;
+  line-height: 1.25;
+}
+
+pre code {
+  display: block;
+  /* max-width: 38em; */
+  margin: 0;
+  padding: 20px;
+  overflow-x: auto;
+  border: 3px solid rgba(0, 0, 0, 0);
+  outline: 1px solid #b1b4b6;
+  background-color: #f8f8f8;
+  font-size: 1.1875rem;
+  line-height: 1.3157894737;
+  margin-bottom: 15px;
+  padding-top: 45px;
+}
+
+.app-copy-button {
+  font-family: "GDS Transport", arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.25;
+  position: absolute;
+  z-index: 1;
+  top: 10px;
+  right: 10px;
+  min-width: 110px;
+  padding: 3px 10px;
+  border: 1px solid #00823b;
+  color: #00823b;
+  background-color: #fff;
+  box-shadow: 0 2px 0 0 #00703c;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+.app-copy-button:focus:not(:hover) {
+  color: #0b0c0c; /* $govuk-focus-text-colour */
+  background-color: #ffdd00; /* $govuk-focus-colour */
+  box-shadow: 0 2px 0 0 #0b0c0c;
+}
+
+.app-copy-button:active,
+.app-copy-button:focus {
+  padding: 2px 10px; /* Adjust for thicker border */
+  border: 2px solid #ffdd00; /* $govuk-focus-colour */
+  outline: 2px solid transparent;
+  box-shadow: none;
+}
+
+.app-copy-button:active {
+  margin-top: 2px;
+  box-shadow: none;
+}
+
+.app-example__code {
+  position: relative;
+}

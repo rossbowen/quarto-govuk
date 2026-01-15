@@ -1,0 +1,152 @@
+/* ==========================================================================
+   Metadata Component
+   ========================================================================== */
+
+.app-c-metadata {
+  font-family: GDS Transport, arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.25;
+  color: #0b0c0c;
+  padding: 15px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  clear: both;
+  border-left: 10px solid #1d70b8;
+  background: #f4f8fb;
+}
+
+@media print {
+  .app-c-metadata {
+    font-family: sans-serif;
+  }
+}
+
+@media (min-width: 40.0625em) {
+  .app-c-metadata {
+    font-size: 1.1875rem;
+    line-height: 1.3157894737;
+    margin-bottom: 30px;
+    padding: 20px;
+  }
+}
+
+@media print {
+  .app-c-metadata {
+    font-size: 14pt;
+    line-height: 1.15;
+    color: #000;
+  }
+}
+
+.app-c-metadata > :first-child {
+  margin-top: 0;
+}
+
+.app-c-metadata > :last-child,
+.app-c-metadata > :only-child {
+  margin-bottom: 0;
+}
+
+/* Metadata list */
+.app-c-metadata__list {
+  font-family: GDS Transport, arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.25;
+  color: #0b0c0c;
+  margin: 0;
+}
+
+@media print {
+  .app-c-metadata__list {
+    font-family: sans-serif;
+  }
+}
+
+@media (min-width: 40.0625em) {
+  .app-c-metadata__list {
+    font-size: 1.1875rem;
+    line-height: 1.3157894737;
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+  }
+}
+
+@media print {
+  .app-c-metadata__list {
+    font-size: 14pt;
+    line-height: 1.15;
+    color: #000;
+  }
+}
+
+/* Metadata row */
+.app-c-metadata__row {
+  border-bottom: 1px solid #b1b4b6;
+}
+
+@media (max-width: 40.0525em) {
+  .app-c-metadata__row {
+    margin-bottom: 15px;
+  }
+}
+
+@media (min-width: 40.0625em) {
+  .app-c-metadata__row {
+    display: table-row;
+  }
+}
+
+.app-c-metadata__row:last-of-type {
+  border-bottom: none;
+}
+
+/* Metadata key and value */
+.app-c-metadata__key,
+.app-c-metadata__value {
+  margin: 0;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+@media (min-width: 40.0625em) {
+  .app-c-metadata__key,
+  .app-c-metadata__value {
+    display: table-cell;
+    padding-top: 10px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+  }
+}
+
+.app-c-metadata__key {
+  margin-bottom: 5px;
+  font-weight: 700;
+}
+
+@media (min-width: 40.0625em) {
+  .app-c-metadata__key {
+    width: 30%;
+  }
+}
+
+@media (max-width: 40.0525em) {
+  .app-c-metadata__value {
+    margin-bottom: 15px;
+  }
+}
+
+.app-c-metadata__value > p {
+  margin-bottom: 10px;
+}
+
+.app-c-metadata__value > :last-child {
+  margin-bottom: 0;
+}

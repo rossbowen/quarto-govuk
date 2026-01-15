@@ -8,11 +8,24 @@
 
 quarto.doc.add_html_dependency({
 	name = "govuk-frontend",
-	scripts = { "javascripts/govuk-frontend.min.js" },
+	scripts = {},  -- JS is loaded as ES module in template, not as regular script
 	stylesheets = {
-        { path = "stylesheets/govuk-frontend.min.css" },
-        { path = "stylesheets/custom.css" },
-		{ path = "stylesheets/syntax.css" },
+        { path = "stylesheets/govuk-frontend.min.css" },      -- GOV.UK Frontend framework
+        { path = "stylesheets/quarto-govuk.css" },            -- Custom components (imports from components/)
+		{ path = "stylesheets/syntax-highlighting.css" },     -- Code syntax highlighting
+	},
+	resources = {
+		{ name = "assets", path = "assets" },
+		{ name = "govuk-frontend.min.js", path = "javascripts/govuk-frontend.min.js" },
+		{ name = "govuk-frontend.min.css.map", path = "stylesheets/govuk-frontend.min.css.map" },
+		{ name = "govuk-frontend.min.js.map", path = "javascripts/govuk-frontend.min.js.map" },
+		-- Component stylesheets (imported by quarto-govuk.css)
+		{ name = "components/masthead.css", path = "stylesheets/components/masthead.css" },
+		{ name = "components/metadata.css", path = "stylesheets/components/metadata.css" },
+		{ name = "components/figure.css", path = "stylesheets/components/figure.css" },
+		{ name = "components/line-block.css", path = "stylesheets/components/line-block.css" },
+		{ name = "components/code-block.css", path = "stylesheets/components/code-block.css" },
+		{ name = "components/lists.css", path = "stylesheets/components/lists.css" }
 	},
 })
 

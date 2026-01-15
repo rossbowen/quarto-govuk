@@ -1,0 +1,97 @@
+/* ==========================================================================
+   Figure Component
+   ========================================================================== */
+
+.app-c-figure {
+  border-top: 1px solid #b1b4b6;
+  padding-top: 15px;
+  margin: 0;
+  margin-bottom: 50px;
+}
+
+.app-c-figure::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+@media (max-width: 40.0525em) {
+  .app-c-figure {
+    margin-bottom: 30px;
+  }
+}
+
+.app-c-figure__image {
+  display: block;
+  width: 100%;
+}
+
+@media (min-width: 40.0625em) {
+  .app-c-figure__image {
+    float: inline-start;
+    width: 50%;
+  }
+}
+
+.app-c-figure__figcaption {
+  font-family: "GDS Transport", arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.25;
+}
+
+@media print {
+  .app-c-figure__figcaption {
+    font-family: sans-serif;
+  }
+}
+
+@media print {
+  .app-c-figure__figcaption {
+    font-size: 14pt;
+    line-height: 1.2;
+  }
+}
+
+@media (min-width: 40.0625em) {
+  .app-c-figure__figcaption {
+    display: block;
+    vertical-align: top;
+    box-sizing: border-box;
+    float: inline-end;
+    padding-inline-start: 15px;
+    width: 50%;
+  }
+}
+
+@media (max-width: 40.0525em) {
+  .app-c-figure__figcaption {
+    margin-top: 10px;
+  }
+}
+
+.app-c-figure__figcaption-text {
+  margin: 0;
+  margin-bottom: 10px;
+  font-family: "GDS Transport", arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.25;
+}
+
+@media print {
+  .app-c-figure__figcaption-text {
+    font-family: sans-serif;
+  }
+}
+
+@media print {
+  .app-c-figure__figcaption-text {
+    font-size: 14pt;
+    line-height: 1.2;
+  }
+}

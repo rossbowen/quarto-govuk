@@ -4,3 +4,9 @@
 *_files/
 /.luarc.json
 .DS_Store
+
+# GOV.UK Frontend update script artifacts
+.govuk-backups/
+.govuk-frontend-temp/
+release-v*/
+release-v*.zip

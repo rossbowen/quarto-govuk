@@ -1,0 +1,23 @@
+/* ==========================================================================
+   Quarto GOV.UK Extension Styles
+
+   This stylesheet provides custom components for Quarto documents styled
+   with the GOV.UK Design System.
+
+   Component naming convention:
+   - .app-c-*  = Components specific to this Quarto extension
+   - .govuk-*  = Components from GOV.UK Frontend (loaded separately)
+
+   File structure:
+   - govuk-frontend.min.css  = Official GOV.UK Frontend framework
+   - quarto-govuk.css        = This file (custom components)
+   - syntax-highlighting.css = Code syntax highlighting theme
+   ========================================================================== */
+
+/* Import custom components */
+@import "components/masthead.css";
+@import "components/metadata.css";
+@import "components/figure.css";
+@import "components/line-block.css";
+@import "components/code-block.css";
+@import "components/lists.css";

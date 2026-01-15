@@ -26,26 +26,26 @@
     <link
       rel="icon"
       sizes="48x48"
-      href="_extensions/quarto-govuk/assets/rebrand/images/favicon.ico"
+      href="$if(govuk-assets-path)$$govuk-assets-path$$else$_extensions/quarto-govuk$endif$/assets/rebrand/images/favicon.ico"
     />
     <link
       rel="icon"
       sizes="any"
-      href="_extensions/quarto-govuk/assets/rebrand/images/favicon.svg"
+      href="$if(govuk-assets-path)$$govuk-assets-path$$else$_extensions/quarto-govuk$endif$/assets/rebrand/images/favicon.svg"
       type="image/svg+xml"
     />
     <link
       rel="mask-icon"
-      href="_extensions/quarto-govuk/assets/rebrand/images/govuk-icon-mask.svg"
+      href="$if(govuk-assets-path)$$govuk-assets-path$$else$_extensions/quarto-govuk$endif$/assets/rebrand/images/govuk-icon-mask.svg"
       color="#1d70b8"
     />
     <link
       rel="apple-touch-icon"
-      href="_extensions/quarto-govuk/assets/rebrand/images/govuk-icon-180.png"
+      href="$if(govuk-assets-path)$$govuk-assets-path$$else$_extensions/quarto-govuk$endif$/assets/rebrand/images/govuk-icon-180.png"
     />
     <link
       rel="manifest"
-      href="_extensions/quarto-govuk/assets/rebrand/manifest.json"
+      href="$if(govuk-assets-path)$$govuk-assets-path$$else$_extensions/quarto-govuk$endif$/assets/rebrand/manifest.json"
     />
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.11/clipboard.min.js"
@@ -318,9 +318,33 @@
         </div>
       </div>
     </footer>
+    $for(dependencies)$
+    $if(dependencies.name)$
+    $if(dependencies.scripts)$
+    $for(dependencies.scripts)$
+    <!-- Dependency script: $dependencies.scripts$ -->
+    $endfor$
+    $endif$
+    $endif$
+    $endfor$
     <script type="module">
-      import { initAll } from "./_extensions/quarto-govuk/javascripts/govuk-frontend.min.js";
-      initAll();
+      // GOV.UK Frontend is copied by Quarto to the libs directory
+      // We need to construct the path dynamically
+      const scripts = document.querySelectorAll('script[src*="govuk-frontend"]');
+      if (scripts.length > 0) {
+        // There's already a script tag, use its src
+        const existingSrc = scripts[0].src;
+        console.log('Found existing script at:', existingSrc);
+      } else {
+        // Fallback: try to import from relative path
+        const basePath = document.querySelector('link[href*="govuk-frontend.min.css"]')?.href.replace('govuk-frontend.min.css', '');
+        if (basePath) {
+          const jsPath = basePath + 'govuk-frontend.min.js';
+          import(jsPath).then(({ initAll }) => {
+            initAll();
+          }).catch(err => console.error('Failed to load GOV.UK Frontend:', err));
+        }
+      }
     </script>
   </body>
 </html>
