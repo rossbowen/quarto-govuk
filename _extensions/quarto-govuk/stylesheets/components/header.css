@@ -1,0 +1,9 @@
+/* ==========================================================================
+   Header Enhancement
+
+   Ensures Header has minimum height when no logo present
+   ========================================================================== */
+
+.govuk-header__container {
+  min-height: 60px;
+}

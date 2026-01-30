@@ -168,6 +168,15 @@ if [ -f "$EXTENSION_DIR/javascripts/govuk-frontend.min.js.map" ]; then
     echo "      ✓ Updated JS source map file reference"
 fi
 
+# Replace GDS Transport font with Arial (GDS Transport requires a license)
+sed -i '' 's|GDS Transport,arial|arial|g' "$EXTENSION_DIR/stylesheets/govuk-frontend.min.css"
+echo "      ✓ Replaced GDS Transport font with Arial"
+
+if [ -f "$EXTENSION_DIR/stylesheets/govuk-frontend.min.css.map" ]; then
+    sed -i '' 's|GDS Transport,arial|arial|g' "$EXTENSION_DIR/stylesheets/govuk-frontend.min.css.map"
+    echo "      ✓ Updated font references in CSS source map"
+fi
+
 # Step 9: Update version tracking
 echo ""
 echo "[9/9] Updating version information..."

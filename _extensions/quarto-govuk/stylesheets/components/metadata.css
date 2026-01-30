@@ -3,7 +3,7 @@
    ========================================================================== */
 
 .app-c-metadata {
-  font-family: GDS Transport, arial, sans-serif;
+  font-family: arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -52,7 +52,7 @@
 
 /* Metadata list */
 .app-c-metadata__list {
-  font-family: GDS Transport, arial, sans-serif;
+  font-family: arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
