@@ -58,52 +58,61 @@
    ========================================================================== */
 
 .app-c-organisation-logo__crest {
-  padding-left: 52px;
   min-height: 32px;
   background-repeat: no-repeat;
   background-position: 8px center;
   background-size: auto 32px;
 }
 
-/* Individual crests */
+/* Individual crests - padding-left = 8px offset + (image width / 2) + 8px gap */
 .app-c-organisation-logo__crest--ho {
   background-image: url("../assets/crests/ho_crest_18px_x2.png");
+  padding-left: 34px; /* 35px wide */
 }
 
 .app-c-organisation-logo__crest--mod {
   background-image: url("../assets/crests/mod_crest_18px_x2.png");
+  padding-left: 40px; /* 48px wide */
 }
 
 .app-c-organisation-logo__crest--hmrc {
   background-image: url("../assets/crests/hmrc_crest_18px_x2.png");
+  padding-left: 42px; /* 52px wide */
 }
 
 .app-c-organisation-logo__crest--no10 {
   background-image: url("../assets/crests/no10_crest_18px_x2.png");
+  padding-left: 64px; /* 96px wide */
 }
 
 .app-c-organisation-logo__crest--portcullis {
   background-image: url("../assets/crests/portcullis_18px_x2.png");
+  padding-left: 43px; /* 53px wide */
 }
 
 .app-c-organisation-logo__crest--wales {
   background-image: url("../assets/crests/wales_crest_18px_x2.png");
+  padding-left: 38px; /* 43px wide */
 }
 
 .app-c-organisation-logo__crest--org {
   background-image: url("../assets/crests/org_crest_18px_x2.png");
+  padding-left: 52px; /* 72px wide */
 }
 
 .app-c-organisation-logo__crest--dbt {
   background-image: url("../assets/crests/dbt_crest_18px_x2.png");
+  padding-left: 45px; /* 58px wide */
 }
 
 .app-c-organisation-logo__crest--ukaea {
   background-image: url("../assets/crests/ukaea_crest_18px_x2.png");
+  padding-left: 45px; /* 57px wide */
 }
 
 .app-c-organisation-logo__crest--so {
   background-image: url("../assets/crests/so_crest_18px_x2.png");
+  padding-left: 55px; /* 78px wide */
 }
 
 /* ==========================================================================
