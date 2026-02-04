@@ -1,9 +1,116 @@
 /* ==========================================================================
-   Header Enhancement
+   Header Component
 
-   Ensures Header has minimum height when no logo present
+   Includes organisation logo styling based on GOV.UK Publishing Components.
    ========================================================================== */
 
 .govuk-header__container {
+  display: flex;
+  align-items: center;
   min-height: 60px;
+  padding-top: 10px;
+  padding-bottom: 0px;
+}
+
+/* Header with brand colour */
+.app-header--branded {
+  border-bottom: none;
+}
+
+/* ==========================================================================
+   Organisation Logo Component
+   Based on: https://components.publishing.service.gov.uk/component-guide/organisation_logo
+   ========================================================================== */
+
+.app-c-organisation-logo {
+  font-family: arial, sans-serif;
+  font-weight: 400;
+  font-size: 1.1875rem;
+  line-height: 1.35;
+  margin: 0;
+}
+
+.app-c-organisation-logo__container {
+  direction: ltr;
+  display: table;
+  line-height: 32px;
+  padding-left: 8px;
+  border-left: 2px solid currentColor;
+}
+
+.app-c-organisation-logo__name {
+  display: table-cell;
+  vertical-align: middle;
+  white-space: pre-line;
+}
+
+/* Inverse (white on dark background) */
+.app-c-organisation-logo--inverse {
+  filter: brightness(0) invert(1);
+}
+
+.app-c-organisation-logo--inverse:focus-within {
+  filter: none;
+}
+
+/* ==========================================================================
+   Crest Backgrounds
+   ========================================================================== */
+
+.app-c-organisation-logo__crest {
+  padding-left: 52px;
+  min-height: 32px;
+  background-repeat: no-repeat;
+  background-position: 8px center;
+  background-size: auto 32px;
+}
+
+/* Individual crests */
+.app-c-organisation-logo__crest--ho {
+  background-image: url("../assets/crests/ho_crest_18px_x2.png");
+}
+
+.app-c-organisation-logo__crest--mod {
+  background-image: url("../assets/crests/mod_crest_18px_x2.png");
+}
+
+.app-c-organisation-logo__crest--hmrc {
+  background-image: url("../assets/crests/hmrc_crest_18px_x2.png");
+}
+
+.app-c-organisation-logo__crest--no10 {
+  background-image: url("../assets/crests/no10_crest_18px_x2.png");
+}
+
+.app-c-organisation-logo__crest--portcullis {
+  background-image: url("../assets/crests/portcullis_18px_x2.png");
+}
+
+.app-c-organisation-logo__crest--wales {
+  background-image: url("../assets/crests/wales_crest_18px_x2.png");
+}
+
+.app-c-organisation-logo__crest--org {
+  background-image: url("../assets/crests/org_crest_18px_x2.png");
+}
+
+.app-c-organisation-logo__crest--dbt {
+  background-image: url("../assets/crests/dbt_crest_18px_x2.png");
+}
+
+.app-c-organisation-logo__crest--ukaea {
+  background-image: url("../assets/crests/ukaea_crest_18px_x2.png");
+}
+
+.app-c-organisation-logo__crest--so {
+  background-image: url("../assets/crests/so_crest_18px_x2.png");
+}
+
+/* ==========================================================================
+   Footer Override
+   ========================================================================== */
+
+.govuk-template--rebranded .govuk-footer {
+  border-top-color: var(--app-brand-colour, #1d70b8);
+  background-color: var(--app-brand-colour-tint-95, #f4f8fb);
 }

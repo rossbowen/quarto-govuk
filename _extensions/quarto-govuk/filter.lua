@@ -25,7 +25,10 @@ quarto.doc.add_html_dependency({
 		{ name = "components/figure.css", path = "stylesheets/components/figure.css" },
 		{ name = "components/line-block.css", path = "stylesheets/components/line-block.css" },
 		{ name = "components/code-block.css", path = "stylesheets/components/code-block.css" },
-		{ name = "components/lists.css", path = "stylesheets/components/lists.css" }
+		{ name = "components/lists.css", path = "stylesheets/components/lists.css" },
+		{ name = "components/header.css", path = "stylesheets/components/header.css" },
+		-- Crest images for organisation logos
+		{ name = "assets/crests", path = "assets/crests" },
 	},
 })
 
@@ -613,6 +616,20 @@ function Pandoc(doc)
 	else
 		doc.meta.has_metadata = false
 	end
+
+	-- Check if organisation is configured and compute brand colour tints
+	if doc.meta.organisation and doc.meta.organisation.name then
+		doc.meta.has_organisation = true
+	end
+
+	-- Compute brand colour tints for CSS custom properties
+	local brand_colour = "#1d70b8" -- default GOV.UK blue
+	if doc.meta.organisation and doc.meta.organisation.colour then
+		brand_colour = pandoc.utils.stringify(doc.meta.organisation.colour)
+	end
+	doc.meta["brand-colour"] = brand_colour
+	doc.meta["brand-colour-tint-80"] = tint(brand_colour, 80) -- masthead background
+	doc.meta["brand-colour-tint-95"] = tint(brand_colour, 95) -- metadata/footer background
 
 	-- populate doc.meta.references from bibliography
 	doc.meta.references = pandoc.utils.references(doc)

@@ -15,7 +15,7 @@ echo "╚═══════════════════════�
 echo ""
 
 # Step 1: Fetch release metadata
-echo "[1/9] Fetching release metadata from GitHub..."
+echo "[1/10] Fetching release metadata from GitHub..."
 if [ "$VERSION" = "latest" ]; then
     api_url="https://api.github.com/repos/${GITHUB_REPO}/releases/latest"
     echo "      → Using latest release"
@@ -40,27 +40,27 @@ echo "      ✓ Download URL: $download_url"
 
 # Step 2: Create temporary directory
 echo ""
-echo "[2/9] Setting up temporary directory..."
+echo "[2/10] Setting up temporary directory..."
 rm -rf "$TEMP_DIR"
 mkdir -p "$TEMP_DIR"
 echo "      ✓ Created $TEMP_DIR"
 
 # Step 3: Download release
 echo ""
-echo "[3/9] Downloading GOV.UK Frontend v${release_version}..."
+echo "[3/10] Downloading GOV.UK Frontend v${release_version}..."
 asset_file="${TEMP_DIR}/release.zip"
 curl -L -o "$asset_file" "$download_url" 2>&1 | grep -E '^\s*[0-9]|^$' || true
 echo "      ✓ Downloaded $(du -h "$asset_file" | cut -f1)"
 
 # Step 4: Extract archive
 echo ""
-echo "[4/9] Extracting archive..."
+echo "[4/10] Extracting archive..."
 unzip -q "$asset_file" -d "$TEMP_DIR"
 echo "      ✓ Extracted successfully"
 
 # Step 5: Backup existing assets (optional)
 echo ""
-echo "[5/9] Creating backup of existing assets..."
+echo "[5/10] Creating backup of existing assets..."
 if [ -d "$EXTENSION_DIR/assets" ] || [ -d "$EXTENSION_DIR/stylesheets" ] || [ -d "$EXTENSION_DIR/javascripts" ]; then
     # Create hidden backup directory
     backup_root=".govuk-backups"
@@ -86,7 +86,7 @@ fi
 
 # Step 6: Clear existing GOV.UK Frontend assets
 echo ""
-echo "[6/9] Removing old GOV.UK Frontend assets..."
+echo "[6/10] Removing old GOV.UK Frontend assets..."
 rm -rf "$EXTENSION_DIR/assets"
 mkdir -p "$EXTENSION_DIR/assets"
 mkdir -p "$EXTENSION_DIR/stylesheets"
@@ -95,7 +95,7 @@ echo "      ✓ Directories prepared"
 
 # Step 7: Copy assets
 echo ""
-echo "[7/9] Installing new assets..."
+echo "[7/10] Installing new assets..."
 if [ -d "$TEMP_DIR/assets" ]; then
     cp -r "$TEMP_DIR/assets/"* "$EXTENSION_DIR/assets/"
     echo "      ✓ Assets copied"
@@ -134,7 +134,7 @@ done
 
 # Step 8: Fix asset paths and source map references
 echo ""
-echo "[8/9] Fixing asset paths and source map references..."
+echo "[8/10] Fixing asset paths and source map references..."
 
 # Fix CSS file - change absolute paths to relative paths in the same directory
 # Quarto copies extension files to example_files/libs/quarto-contrib/govuk-frontend/
@@ -177,9 +177,19 @@ if [ -f "$EXTENSION_DIR/stylesheets/govuk-frontend.min.css.map" ]; then
     echo "      ✓ Updated font references in CSS source map"
 fi
 
-# Step 9: Update version tracking
+# Step 9: Download crest images for organisation logos
 echo ""
-echo "[9/9] Updating version information..."
+echo "[9/10] Downloading crest images..."
+CRESTS_URL="https://raw.githubusercontent.com/alphagov/govuk_publishing_components/main/app/assets/images/govuk_publishing_components/crests"
+mkdir -p "$EXTENSION_DIR/assets/crests"
+for crest in ho_crest mod_crest hmrc_crest no10_crest portcullis wales_crest org_crest dbt_crest ukaea_crest so_crest; do
+    curl -sL "$CRESTS_URL/${crest}_18px_x2.png" -o "$EXTENSION_DIR/assets/crests/${crest}_18px_x2.png"
+done
+echo "      ✓ Downloaded crest images"
+
+# Step 10: Update version tracking
+echo ""
+echo "[10/10] Updating version information..."
 echo "$release_version" > "$EXTENSION_DIR/.govuk-frontend-version"
 echo "      ✓ Version ${release_version} recorded in ${EXTENSION_DIR}/.govuk-frontend-version"
 

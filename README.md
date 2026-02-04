@@ -2,7 +2,6 @@
 
 A [Quarto](https://quarto.org/) extension that produces HTML documents styled with the [GOV.UK Design System](https://design-system.service.gov.uk/).
 
-
 ## Quick start
 
 ### Installation
@@ -25,7 +24,6 @@ author: "Your Name"
 date: today
 format: quarto-govuk-html
 ---
-
 ## Introduction
 
 Your content here following the GOV.UK Design System.
@@ -43,26 +41,105 @@ Configure your document in the YAML frontmatter:
 
 ```yaml
 ---
-title: "Document Title"                  # Required: Main heading
-subtitle: "Brief description"            # Optional: Appears under title
-author: "Author Name"                    # Optional: Document author(s)
-date: today                              # Optional: Publication date
-date-modified: last-modified             # Optional: Last update date
+title: "Document Title" # Required: Main heading
+subtitle: "Brief description" # Optional: Appears under title
+author: "Author Name" # Optional: Document author(s)
+date: today # Optional: Publication date
+date-modified: last-modified # Optional: Last update date
 format: quarto-govuk-html
-toc: true                                # Optional: Table of contents
+toc: true # Optional: Table of contents
 ---
 ```
 
 ### Available metadata fields
 
-| Field | Description | Example |
-|-------|-------------|---------|
-| `title` | Main document heading | `"Annual Report 2024"` |
-| `subtitle` | Descriptive subtitle | `"Performance and outcomes"` |
-| `author` | Author name(s) | `"Jane Smith"` or `["Jane Smith", "John Doe"]` |
-| `date` | Publication date | `today` or `"2024-01-15"` |
-| `date-modified` | Last modification | `last-modified` or `"2024-01-20"` |
-| `toc` | Show table of contents | `true` or `false` |
+| Field           | Description            | Example                                        |
+| --------------- | ---------------------- | ---------------------------------------------- |
+| `title`         | Main document heading  | `"Annual Report 2024"`                         |
+| `subtitle`      | Descriptive subtitle   | `"Performance and outcomes"`                   |
+| `author`        | Author name(s)         | `"Jane Smith"` or `["Jane Smith", "John Doe"]` |
+| `date`          | Publication date       | `today` or `"2024-01-15"`                      |
+| `date-modified` | Last modification      | `last-modified` or `"2024-01-20"`              |
+| `toc`           | Show table of contents | `true` or `false`                              |
+
+### Organisation branding
+
+Add your organisation's branding to the document header:
+
+```yaml
+---
+organisation:
+  name: "Cabinet Office"
+  colour: "#0056b8"
+  crest: "org" # optional
+---
+```
+
+| Field    | Description                  |
+| -------- | ---------------------------- |
+| `name`   | Organisation name.           |
+| `colour` | Brand colour as hex code     |
+| `crest`  | Crest identifier (see below) |
+
+#### Available crests
+
+| Crest        | Image                                                                                               | Description                |
+| ------------ | --------------------------------------------------------------------------------------------------- | -------------------------- |
+| `ho`         | ![Home Office crest](_extensions/quarto-govuk/assets/crests/ho_crest_18px_x2.png)                   | Home Office                |
+| `mod`        | ![Ministry of Defence crest](_extensions/quarto-govuk/assets/crests/mod_crest_18px_x2.png)          | Ministry of Defence        |
+| `hmrc`       | ![HMRC crest](_extensions/quarto-govuk/assets/crests/hmrc_crest_18px_x2.png)                        | HMRC                       |
+| `no10`       | ![Prime Minister's Office crest](_extensions/quarto-govuk/assets/crests/no10_crest_18px_x2.png)     | Prime Minister's Office    |
+| `portcullis` | ![Parliament crest](_extensions/quarto-govuk/assets/crests/portcullis_18px_x2.png)                  | Parliament                 |
+| `wales`      | ![Welsh Government crest](_extensions/quarto-govuk/assets/crests/wales_crest_18px_x2.png)           | Welsh Government           |
+| `org`        | ![Generic organisation crest](_extensions/quarto-govuk/assets/crests/org_crest_18px_x2.png)         | Generic organisation       |
+| `dbt`        | ![Dept for Business & Trade crest](_extensions/quarto-govuk/assets/crests/dbt_crest_18px_x2.png)    | Dept for Business & Trade  |
+| `ukaea`      | ![UK Atomic Energy Authority crest](_extensions/quarto-govuk/assets/crests/ukaea_crest_18px_x2.png) | UK Atomic Energy Authority |
+| `so`         | ![Scotland Office crest](_extensions/quarto-govuk/assets/crests/so_crest_18px_x2.png)               | Scotland Office            |
+
+#### Example with multi-line name
+
+```yaml
+organisation:
+  name: "Home Office\nUK Visas and Immigration"
+  colour: "#732282"
+  crest: "ho"
+```
+
+#### Organisation colours
+
+Organisation colours from the [GOV.UK Frontend](https://github.com/alphagov/govuk-frontend/blob/main/packages/govuk-frontend/src/govuk/settings/_colours-organisations.scss):
+
+| Organisation                                          | Colour    |
+| ----------------------------------------------------- | --------- |
+| Attorney General's Office                             | `#a91c8e` |
+| Cabinet Office                                        | `#0056b8` |
+| Civil Service                                         | `#b2292e` |
+| Department for Business and Trade                     | `#e52d13` |
+| Department for Culture, Media and Sport               | `#ed1588` |
+| Department for Education                              | `#003764` |
+| Department for Energy Security and Net Zero           | `#003479` |
+| Department for Environment, Food and Rural Affairs    | `#00a33b` |
+| Department for Science, Innovation and Technology     | `#00f8f8` |
+| Department for Transport                              | `#006853` |
+| Department for Work and Pensions                      | `#00bcb5` |
+| Department of Health and Social Care                  | `#00a990` |
+| Foreign, Commonwealth and Development Office          | `#012069` |
+| HM Government                                         | `#266ebc` |
+| HM Revenue and Customs                                | `#008670` |
+| HM Treasury                                           | `#b2292e` |
+| Home Office                                           | `#732282` |
+| Ministry of Defence                                   | `#532a45` |
+| Ministry of Housing, Communities and Local Government | `#00625e` |
+| Ministry of Justice                                   | `#000000` |
+| Northern Ireland Office                               | `#00205c` |
+| Office of the Advocate General for Scotland           | `#00205c` |
+| Office of the Leader of the House of Commons          | `#497629` |
+| Office of the Leader of the House of Lords            | `#9c182f` |
+| Prime Minister's Office, 10 Downing Street            | `#0b0c0c` |
+| Scotland Office                                       | `#00205c` |
+| Serious Fraud Office                                  | `#82368c` |
+| UK Export Finance                                     | `#cf102d` |
+| Wales Office                                          | `#a33038` |
 
 ## Components
 
@@ -116,7 +193,7 @@ GOV.UK-styled tables:
 
 ```markdown
 | Header 1 | Header 2 |
-|----------|----------|
+| -------- | -------- |
 | Data 1   | Data 2   |
 ```
 
@@ -178,12 +255,14 @@ See [stylesheets/components/README.md](_extensions/quarto-govuk/stylesheets/comp
 ### Building from source
 
 1. Clone the repository:
+
    ```bash
    git clone https://github.com/rossbowen/quarto-govuk.git
    cd quarto-govuk
    ```
 
 2. Test the extension:
+
    ```bash
    quarto render example.qmd
    ```
@@ -194,7 +273,6 @@ See [stylesheets/components/README.md](_extensions/quarto-govuk/stylesheets/comp
    ```bash
    quarto render example.qmd
    ```
-
 
 ### Maintaining GOV.UK frontend
 
@@ -241,11 +319,13 @@ cat _extensions/quarto-govuk/.govuk-frontend-version
 Before committing updates to GOV.UK Frontend:
 
 1. Run the update script:
+
    ```bash
    ./update-govuk-frontend.sh
    ```
 
 2. Test with example document:
+
    ```bash
    quarto render example.qmd
    ```
@@ -261,11 +341,13 @@ Before committing updates to GOV.UK Frontend:
 ## Resources
 
 ### GOV.UK Design System
+
 - [Design System](https://design-system.service.gov.uk/)
 - [Frontend Toolkit](https://github.com/alphagov/govuk-frontend)
 - [Component Conventions](https://components.publishing.service.gov.uk/component-conventions.html)
 
 ### Quarto
+
 - [Quarto Documentation](https://quarto.org/)
 - [Creating Formats](https://quarto.org/docs/extensions/formats.html)
 - [Lua Filters](https://quarto.org/docs/extensions/lua.html)
@@ -276,6 +358,7 @@ Before committing updates to GOV.UK Frontend:
 MIT License - see [LICENSE](LICENSE) for details.
 
 This project builds upon:
+
 - [GOV.UK Frontend](https://github.com/alphagov/govuk-frontend) - MIT License
 - [Quarto](https://github.com/quarto-dev/quarto-cli) - GPL v2
 
@@ -286,4 +369,3 @@ Contributions are welcome! Please feel free to submit issues or pull requests.
 ## Example
 
 See [example.qmd](example.qmd) for a complete example document demonstrating all features.
-

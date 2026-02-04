@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en" class="govuk-template govuk-template--rebranded">
   <head>
     <meta charset="utf-8" />
@@ -7,7 +7,14 @@
       name="viewport"
       content="width=device-width, initial-scale=1, viewport-fit=cover"
     />
-    <meta name="theme-color" content="#1d70b8" />
+    <meta name="theme-color" content="$brand-colour$" />
+    <style>
+      :root {
+        --app-brand-colour: $brand-colour$;
+        --app-brand-colour-tint-80: $brand-colour-tint-80$;
+        --app-brand-colour-tint-95: $brand-colour-tint-95$;
+      }
+    </style>
     $if(quarto-version)$
     <meta name="generator" content="quarto-$quarto-version$" />
     $else$
@@ -37,7 +44,7 @@
     <link
       rel="mask-icon"
       href="$if(govuk-assets-path)$$govuk-assets-path$$else$_extensions/quarto-govuk$endif$/assets/rebrand/images/govuk-icon-mask.svg"
-      color="#1d70b8"
+      color="$brand-colour$"
     />
     <link
       rel="apple-touch-icon"
@@ -129,8 +136,15 @@
       data-module="govuk-skip-link"
       >Skip to main content</a
     >
-    <header class="govuk-header" data-module="govuk-header">
+    <header class="govuk-header$if(organisation.colour)$ app-header--branded$endif$" data-module="govuk-header"$if(organisation.colour)$ style="background-color: $organisation.colour$"$endif$>
       <div class="govuk-header__container govuk-width-container">
+        $if(organisation.name)$
+        <div class="app-c-organisation-logo app-c-organisation-logo--inverse">
+          <div class="app-c-organisation-logo__container$if(organisation.crest)$ app-c-organisation-logo__crest app-c-organisation-logo__crest--$organisation.crest$$endif$">
+            <span class="app-c-organisation-logo__name">$organisation.name$</span>
+          </div>
+        </div>
+        $endif$
       </div>
     </header>
     <main id="main-content">

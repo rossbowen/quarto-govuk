@@ -14,8 +14,8 @@
   margin-top: 20px;
   margin-bottom: 20px;
   clear: both;
-  border-left: 10px solid #1d70b8;
-  background: #f4f8fb;
+  border-left: 10px solid var(--app-brand-colour, #1d70b8);
+  background: var(--app-brand-colour-tint-95, #f4f8fb);
 }
 
 @media print {

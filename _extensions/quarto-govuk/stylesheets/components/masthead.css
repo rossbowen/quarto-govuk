@@ -3,8 +3,7 @@
    ========================================================================== */
 
 .app-c-masthead {
-  /* background-color: #1d70b8; */
-  background-color: #d2e2f1;
+  background-color: var(--app-brand-colour-tint-80, #d2e2f1);
   padding-top: 20px;
   padding-bottom: 20px;
 }

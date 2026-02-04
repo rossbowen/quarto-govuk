@@ -4,11 +4,85 @@ subtitle: Demonstrating the [GOV.UK Design System](https://design-system.service
 format:
   quarto-govuk-html:
     toc: true
+organisation:
+  name: "Example Organisation"
+  colour: "#CD1423"
+  crest: "org"
 author: Ross Bowen
 date: 2025-11-03
 date-modified: last-modified
 bibliography: references.bib
-nocite: '@*'
+nocite: "@*"
+---
+
+## Organisation branding
+
+Add your organisation's branding to the document header using the `organisation` field in the YAML frontmatter:
+
+```yaml
+organisation:
+  name: "Companies House"
+  colour: "#CD1423"
+  crest: "org"
+```
+
+| Field    | Description                  |
+| -------- | ---------------------------- |
+| `name`   | Organisation name.           |
+| `colour` | Brand colour as hex code     |
+| `crest`  | Crest identifier (see below) |
+
+### Available crests
+
+| Crest        | Image                                                                                               | Description                     |
+| ------------ | --------------------------------------------------------------------------------------------------- | ------------------------------- |
+| `org`        | ![Generic organisation crest](_extensions/quarto-govuk/assets/crests/org_crest_18px_x2.png)         | Generic organisation            |
+| `portcullis` | ![Parliament crest](_extensions/quarto-govuk/assets/crests/portcullis_18px_x2.png)                  | Parliament                      |
+| `ho`         | ![Home Office crest](_extensions/quarto-govuk/assets/crests/ho_crest_18px_x2.png)                   | Home Office                     |
+| `mod`        | ![Ministry of Defence crest](_extensions/quarto-govuk/assets/crests/mod_crest_18px_x2.png)          | Ministry of Defence             |
+| `hmrc`       | ![HMRC crest](_extensions/quarto-govuk/assets/crests/hmrc_crest_18px_x2.png)                        | HMRC                            |
+| `no10`       | ![Prime Minister's Office crest](_extensions/quarto-govuk/assets/crests/no10_crest_18px_x2.png)     | Prime Minister's Office         |
+| `wales`      | ![Welsh Government crest](_extensions/quarto-govuk/assets/crests/wales_crest_18px_x2.png)           | Welsh Government                |
+| `dbt`        | ![Dep for Business & Trade crest](_extensions/quarto-govuk/assets/crests/dbt_crest_18px_x2.png)     | Department for Business & Trade |
+| `ukaea`      | ![UK Atomic Energy Authority crest](_extensions/quarto-govuk/assets/crests/ukaea_crest_18px_x2.png) | UK Atomic Energy Authority      |
+| `so`         | ![Scotland Office crest](_extensions/quarto-govuk/assets/crests/so_crest_18px_x2.png)               | Scotland Office                 |
+
+### Organisation colours
+
+Organisation colours from the [GOV.UK Frontend](https://github.com/alphagov/govuk-frontend/blob/main/packages/govuk-frontend/src/govuk/settings/_colours-organisations.scss):
+
+| Organisation                                          | Colour                                                                                                                               |
+| ----------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
+| Attorney General's Office                             | []{style="display:inline-block;width:16px;height:16px;background:#a91c8e;vertical-align:middle;margin-right:4px;"} `#a91c8e` |
+| Cabinet Office                                        | []{style="display:inline-block;width:16px;height:16px;background:#0056b8;vertical-align:middle;margin-right:4px;"} `#0056b8` |
+| Civil Service                                         | []{style="display:inline-block;width:16px;height:16px;background:#b2292e;vertical-align:middle;margin-right:4px;"} `#b2292e` |
+| Department for Business and Trade                     | []{style="display:inline-block;width:16px;height:16px;background:#e52d13;vertical-align:middle;margin-right:4px;"} `#e52d13` |
+| Department for Culture, Media and Sport               | []{style="display:inline-block;width:16px;height:16px;background:#ed1588;vertical-align:middle;margin-right:4px;"} `#ed1588` |
+| Department for Education                              | []{style="display:inline-block;width:16px;height:16px;background:#003764;vertical-align:middle;margin-right:4px;"} `#003764` |
+| Department for Energy Security and Net Zero           | []{style="display:inline-block;width:16px;height:16px;background:#003479;vertical-align:middle;margin-right:4px;"} `#003479` |
+| Department for Environment, Food and Rural Affairs    | []{style="display:inline-block;width:16px;height:16px;background:#00a33b;vertical-align:middle;margin-right:4px;"} `#00a33b` |
+| Department for Science, Innovation and Technology     | []{style="display:inline-block;width:16px;height:16px;background:#00f8f8;vertical-align:middle;margin-right:4px;"} `#00f8f8` |
+| Department for Transport                              | []{style="display:inline-block;width:16px;height:16px;background:#006853;vertical-align:middle;margin-right:4px;"} `#006853` |
+| Department for Work and Pensions                      | []{style="display:inline-block;width:16px;height:16px;background:#00bcb5;vertical-align:middle;margin-right:4px;"} `#00bcb5` |
+| Department of Health and Social Care                  | []{style="display:inline-block;width:16px;height:16px;background:#00a990;vertical-align:middle;margin-right:4px;"} `#00a990` |
+| Foreign, Commonwealth and Development Office          | []{style="display:inline-block;width:16px;height:16px;background:#012069;vertical-align:middle;margin-right:4px;"} `#012069` |
+| HM Government                                         | []{style="display:inline-block;width:16px;height:16px;background:#266ebc;vertical-align:middle;margin-right:4px;"} `#266ebc` |
+| HM Revenue and Customs                                | []{style="display:inline-block;width:16px;height:16px;background:#008670;vertical-align:middle;margin-right:4px;"} `#008670` |
+| HM Treasury                                           | []{style="display:inline-block;width:16px;height:16px;background:#b2292e;vertical-align:middle;margin-right:4px;"} `#b2292e` |
+| Home Office                                           | []{style="display:inline-block;width:16px;height:16px;background:#732282;vertical-align:middle;margin-right:4px;"} `#732282` |
+| Ministry of Defence                                   | []{style="display:inline-block;width:16px;height:16px;background:#532a45;vertical-align:middle;margin-right:4px;"} `#532a45` |
+| Ministry of Housing, Communities and Local Government | []{style="display:inline-block;width:16px;height:16px;background:#00625e;vertical-align:middle;margin-right:4px;"} `#00625e` |
+| Ministry of Justice                                   | []{style="display:inline-block;width:16px;height:16px;background:#000000;vertical-align:middle;margin-right:4px;"} `#000000` |
+| Northern Ireland Office                               | []{style="display:inline-block;width:16px;height:16px;background:#00205c;vertical-align:middle;margin-right:4px;"} `#00205c` |
+| Office of the Advocate General for Scotland           | []{style="display:inline-block;width:16px;height:16px;background:#00205c;vertical-align:middle;margin-right:4px;"} `#00205c` |
+| Office of the Leader of the House of Commons          | []{style="display:inline-block;width:16px;height:16px;background:#497629;vertical-align:middle;margin-right:4px;"} `#497629` |
+| Office of the Leader of the House of Lords            | []{style="display:inline-block;width:16px;height:16px;background:#9c182f;vertical-align:middle;margin-right:4px;"} `#9c182f` |
+| Prime Minister's Office, 10 Downing Street            | []{style="display:inline-block;width:16px;height:16px;background:#0b0c0c;vertical-align:middle;margin-right:4px;"} `#0b0c0c` |
+| Scotland Office                                       | []{style="display:inline-block;width:16px;height:16px;background:#00205c;vertical-align:middle;margin-right:4px;"} `#00205c` |
+| Serious Fraud Office                                  | []{style="display:inline-block;width:16px;height:16px;background:#82368c;vertical-align:middle;margin-right:4px;"} `#82368c` |
+| UK Export Finance                                     | []{style="display:inline-block;width:16px;height:16px;background:#cf102d;vertical-align:middle;margin-right:4px;"} `#cf102d` |
+| Wales Office                                          | []{style="display:inline-block;width:16px;height:16px;background:#a33038;vertical-align:middle;margin-right:4px;"} `#a33038` |
+
 ---
 
 ## Paragraphs
@@ -17,11 +91,11 @@ The default [paragraph](https://design-system.service.gov.uk/styles/paragraphs/)
 
 ### Bold
 
-This is **bold** text and this is ***bold italics*** text.
+This is **bold** text and this is **_bold italics_** text.
 
 ### Italics
 
-This is *italicised* text.
+This is _italicised_ text.
 
 ### Strikeout
 
@@ -100,7 +174,6 @@ Use the [inset text](https://design-system.service.gov.uk/components/inset-text/
 > > expresses updated belief about parameters $\theta$ after observing data $y$.
 
 ---
-
 
 ## Lists
 
@@ -209,12 +282,12 @@ Date of birth
 
 Address
 : 72 Guild Street  
-  London  
-  SE23 6FH
+ London  
+ SE23 6FH
 
 Contact details
 : 07700 900457  
-  sarah.phillips@example.com
+ sarah.phillips@example.com
 ```
 
 Name
@@ -225,12 +298,12 @@ Date of birth
 
 Address
 : 72 Guild Street  
-  London  
-  SE23 6FH
+ London  
+ SE23 6FH
 
 Contact details
 : 07700 900457  
-  sarah.phillips@example.com
+ sarah.phillips@example.com
 
 ## Code block
 
@@ -239,8 +312,8 @@ This pattern is adapted from the GOV.UK Design System website and is not part of
 ```r
 library(dplyr)
 
-tibble(x = c(2, 4, 6, 8, 10)) |> 
-  summarise(mean = mean(x), sd = sd(x)) |> 
+tibble(x = c(2, 4, 6, 8, 10)) |>
+  summarise(mean = mean(x), sd = sd(x)) |>
   print()
 ```
 
@@ -253,7 +326,6 @@ Use a horizontal rule ([section break](https://design-system.service.gov.uk/styl
 ---
 
 ## Line block
-
 
 Line blocks are used to present lines of text, such as poetry or [addresses](https://components.publishing.service.gov.uk/component-guide/govspeak/address), with preserved line breaks.
 
@@ -292,7 +364,6 @@ Images can be included without captions.
 ---
 
 ## Figures
-
 
 [Figures](https://components.publishing.service.gov.uk/component-guide/figure) are images with captions.
 
@@ -354,7 +425,6 @@ $$
 \int_{-\infty}^{\infty} e^{-x^2} \, dx = \sqrt{\pi}.
 $$
 
-
 ---
 
 ## Footnotes
@@ -388,7 +458,6 @@ Data wrangling, visualisation, and modelling can be efficiently performed in R u
 Data wrangling, visualisation, and modelling can be efficiently performed in R using the tools and principles outlined in @r4ds2023.
 
 ---
-
 
 ## Links
 
